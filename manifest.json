@@ -1,6 +1,6 @@
 {
-    "short_name": "Notepad",
-    "name": "Notepad",
+    "short_name": "Malette",
+    "name": "Malette",
     "display": "standalone",
     "icons": [{
             "src": "img/icon.svg",
@@ -23,7 +23,7 @@
             "type": "image/svg"
         }
     ],
-    "start_url": "/index.html",
+    "start_url": "https://rohitkparida.github.io/malette/",
     "display": "standalone",
     "background_color": "#212121",
     "theme_color": "#536DFE"

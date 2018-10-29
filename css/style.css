@@ -18,7 +18,8 @@
     background: rgba(0, 0, 0, 0.2);
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+    /* Code for Firefox */
     color: rgba(0, 0, 0, 0.6);
     background: rgba(0, 0, 0, 0.2);
 }
@@ -31,17 +32,21 @@
 }
 
 html, body {
-    position: relative
+    position: relative;
+    overflow: hidden;
 }
 
 /*_________________________*/
-
 .content {
-    overflow: hidden;
+    overflow: scroll;
+    display: inline-block;
     opacity: 0;
+    height: calc(100vh - 56px);
+    width: calc(100vw - 56px);
     transform: translateY(100vh);
     animation: animate .2s forwards;
     animation-delay: .2s;
+    scroll-snap-type: y proximity;
 }
 
 .title {
@@ -54,23 +59,25 @@ html, body {
 }
 
 .appbar {
-    position: fixed;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
     height: 56px;
     width: 100vw;
-    z-index: 2;
+    z-index: 1;
+    position: relative;
     transform: translateY(-100vh);
     animation: animate .2s forwards;
 }
 
 nav {
-    position: fixed;
-    height: calc(100vh - 57px);
+    height: calc(100vh - 56px);
+    float: left;
     width: 56px;
+    display: inline-block;
     background: white;
     border-right: 1px solid #e0e0e0;
-    margin-top: 56px;
+    box-sizing: border-box;
     overflow: scroll;
+    float: left;
     z-index: 1;
     transform: translateX(-100vw);
     animation: animate .2s forwards;
@@ -93,16 +100,17 @@ nav {
 }
 
 .color-vessel {
-    margin: 56px 0 0 56px;
     box-sizing: border-box;
     transition: all .4s;
 }
 
 .color, .color-title {
+    box-sizing: border-box;
     display: inline-block;
     float: left;
-    height: 24px;
-    width: calc(100% - 30px);
+    height: calc((100vh - 56px) / 11);
+    min-height: 40px;
+    width: 100%;
     max-width: 500px;
     padding: 10px 15px;
     color: rgba(0, 0, 0, 0.87);
@@ -112,6 +120,8 @@ nav {
 .color-title {
     max-width: none;
     background: none;
+    scroll-snap-align: start;
+    scroll-padding: 2px;
 }
 
 .right {
@@ -120,18 +130,18 @@ nav {
 
 @media (min-width: 768px) {
     .color {
-        width: calc((100% - 60px)/2);
+        width: calc(100% / 2);
     }
 }
 
 @media (min-width: 1024px) {
     .color {
-        width: calc((100% - 90px)/3);
+        width: calc(100% / 3);
     }
 }
 
 @media (min-width: 1440px) {
     .color {
-        width: calc((100% - 120px)/4);
+        width: calc(100% / 4);
     }
 }
