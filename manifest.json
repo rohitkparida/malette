@@ -1,24 +1,23 @@
 {
     "short_name": "Malette",
     "name": "Malette",
-    "display": "standalone",
     "icons": [{
-            "src": "img/icon.svg",
+            "src": "favicon.svg",
             "sizes": "48x48",
             "type": "image/svg"
         },
         {
-            "src": "img/icon.svg",
+            "src": "favicon.svg",
             "sizes": "96x96",
             "type": "image/svg"
         },
         {
-            "src": "img/icon.svg",
+            "src": "favicon.svg",
             "sizes": "144x144",
             "type": "image/svg"
         },
         {
-            "src": "img/icon.svg",
+            "src": "favicon.svg",
             "sizes": "196x196",
             "type": "image/svg"
         }
