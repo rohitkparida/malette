@@ -93,25 +93,8 @@
         </nav>
         <!--______________________________CONTENT-->
         <div class="content">
-            <div class="color-vessel">
-                <div class="color-title" id="red">Red</div>
-                <div class="color red-50"><span>50</span><span class="right">#FFEBEE</span></div>
-                <div class="color red-100"><span>100</span><span class="right">#FFCCD2</span></div>
-                <div class="color red-200"><span>200</span><span class="right">#EF9A9A</span></div>
-                <div class="color red-300"><span>300</span><span class="right">#E57373</span></div>
-                <div class="color red-400 white-text"><span>400</span><span class="right">#EF5350</span></div>
-                <div class="color red-500 white-text"><span>500</span><span class="right">#F44336</span></div>
-                <div class="color red-600 white-text"><span>600</span><span class="right">#E53935</span></div>
-                <div class="color red-700 white-text"><span>700</span><span class="right">#D32F2F</span></div>
-                <div class="color red-800 white-text"><span>800</span><span class="right">#C62828</span></div>
-                <div class="color red-900 white-text"><span>900</span><span class="right">#B71C1C</span></div>
-                <div class="color-title" id="red">Red Accents</div>
-                <div class="color red-a100"><span>A100</span><span class="right">#1a237E</span></div>
-                <div class="color red-a200 white-text"><span>A200</span><span class="right">#1a237E</span></div>
-                <div class="color red-a400 white-text"><span>A400</span><span class="right">#1a237E</span></div>
-                <div class="color red-a700 white-text"><span>A700</span><span class="right">#1a237E</span></div>
-            </div>
-            <div class="color-vessel">
+
+            <!-- <div class="color-vessel">
                 <div class="color-title" id="pink">Pink</div>
                 <div class="color pink-50"><span>50</span><span class="right">#FCE4EC</span></div>
                 <div class="color pink-100"><span>100</span><span class="right">#F8BBD0</span></div>
@@ -426,7 +409,25 @@
                 </div>
                 <div class="color white"><span class="right">#FFF</span>White</span>
                 </div>
-            </div>
+            </div> -->
+            <section class="color-vessel">
+                <div class="color-title" id="red">Red</div>
+                <div class="color red-50"><span>50</span><span class="right">#FFEBEE</span></div>
+                <div class="color red-100"><span>100</span><span class="right">#FFCCD2</span></div>
+                <div class="color red-200"><span>200</span><span class="right">#EF9A9A</span></div>
+                <div class="color red-300"><span>300</span><span class="right">#E57373</span></div>
+                <div class="color red-400 white-text"><span>400</span><span class="right">#EF5350</span></div>
+                <div class="color red-500 white-text"><span>500</span><span class="right">#F44336</span></div>
+                <div class="color red-600 white-text"><span>600</span><span class="right">#E53935</span></div>
+                <div class="color red-700 white-text"><span>700</span><span class="right">#D32F2F</span></div>
+                <div class="color red-800 white-text"><span>800</span><span class="right">#C62828</span></div>
+                <div class="color red-900 white-text"><span>900</span><span class="right">#B71C1C</span></div>
+                <div class="color-title" id="red">Red Accents</div>
+                <div class="color red-a100"><span>A100</span><span class="right">#1a237E</span></div>
+                <div class="color red-a200 white-text"><span>A200</span><span class="right">#1a237E</span></div>
+                <div class="color red-a400 white-text"><span>A400</span><span class="right">#1a237E</span></div>
+                <div class="color red-a700 white-text"><span>A700</span><span class="right">#1a237E</span></div>
+            </section>
         </div>
     </div>
     <!--______________________________CONTENT_END-->
@@ -436,18 +437,91 @@
 </body>
 <script type="text/javascript">
     //anchor-for-scrolling-------------------------------------
-    $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('.content').animate({
-                    scrollTop: target.offset().top
-                }, 700);
-                return false;
-            }
-        }
+    // $('a[href*="#"]:not([href="#"])').click(function() {
+    //     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    //         var target = $(this.hash);
+    //         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    //         if (target.length) {
+    //             $('.content').animate({
+    //                 scrollTop: target.offset().top
+    //             }, 1200);
+    //             return false;
+    //         }
+    //     }
+    // });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth',
+                block: "start",
+                inline: "nearest"
+            });
+        });
     });
 </script>
 
 </html>
+<!-- color: "#000000",
+    "500": "#000000",
+    0
+color: "#000000",
+
+    color: rgba(0, 0, 0, 0.87)
+", -
+Secondary: rgba(0, 0, 0, 0.54)
+", -
+Secondary
+color: rgba(0, 0, 0, 0.54)
+", -
+icons: rgba(0, 0, 0, 0.54)
+", -
+icons
+color: rgba(0, 0, 0, 0.54)
+", -
+disabled: rgba(0, 0, 0, 0.26)
+", -
+disabled
+color: rgba(0, 0, 0, 0.26)
+", -
+Hint: rgba(0, 0, 0, 0.26)
+", -
+Hint
+color: rgba(0, 0, 0, 0.26)
+", -
+dividers: rgba(0, 0, 0, 0.12)
+", -
+dividers
+color: rgba(0, 0, 0, 0.12)
+",
+
+.white: "#ffffff",
+
+    .white
+color: rgba(255, 255, 255, 0.87)
+",
+.white - Secondary: rgba(255, 255, 255, 0.7)
+",
+.white - Secondary
+color: rgba(255, 255, 255, 0.7)
+",
+.white - icons: "#ffffff",
+    .white - icons
+color: "#ffffff",
+    .white - disabled: rgba(255, 255, 255, 0.3)
+",
+.white - disabled
+color: rgba(255, 255, 255, 0.3)
+",
+.white - Hint: rgba(255, 255, 255, 0.3)
+",
+.white - Hint
+color: rgba(255, 255, 255, 0.3)
+",
+.white - dividers: rgba(255, 255, 255, 0.12)
+",
+.white - dividers
+color: rgba(255, 255, 255, 0.12)
+"
+} -->
