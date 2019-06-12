@@ -23,10 +23,6 @@
     cursor: default;
 }
 
-html, body {
-    position: fixed;
-}
-
 /*_________________________*/
 .content {
     overflow: scroll;
@@ -37,14 +33,14 @@ html, body {
     animation: animate .2s forwards;
     animation-delay: .2s;
     scroll-snap-type: y mandatory;
-    color: rgba(0, 0, 0, 0.87);
     user-select: none;
 }
 
 .color-wrapper {
     display: inline-block;
     scroll-snap-align: start;
-    width:100%;
+    width: 100%;
+    height: unset;
     float: left;
     user-select: none;
 }
@@ -66,10 +62,12 @@ html, body {
 .appbar {
     height: 56px;
     width: 100vw;
-    z-index: 2;
+    z-index: 1;
+    float: left;
     position: relative;
     transform: translateY(-100vh);
     border-bottom: 1px solid #dadce0;
+    box-sizing: border-box;
     animation: animate .2s forwards;
    /* box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); */
 }
@@ -89,10 +87,8 @@ html, body {
 nav {
     height: calc(100vh - 56px);
     position: relative;
-    border-right: 1px solid #dadce0;
     width: 56px;
     background: #fafafa;
-    box-sizing: border-box;
     overflow: scroll;
     float: left;
     z-index: 1;
@@ -130,7 +126,7 @@ nav {
     max-height: 60px;
     width: 100%;
     padding: 10px 15px;
-    color: rgba(0, 0, 0, 0.87);
+    color: rgba(0, 0, 0, 0.71);
     transform-origin: left;
     display: block;
     user-select: initial;
@@ -138,12 +134,15 @@ nav {
 
 .color-title {
     max-width: none;
-    background: none;
+    /* background: none; */
     position: sticky;
     top: 0;
     background: #F5F5F5;
     height: unset;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    
 }
 
 .right {
@@ -152,13 +151,25 @@ nav {
 
 @media (min-width: 768px) {
     .color {
-        width: calc(100% / 2);
+        width: calc(100% / 3);
     }
+    .color-wrapper {
+        max-height: calc((60px * 5) + 40px);
+    }
+    nav {
+        width: 113px;
+    }
+    .content {
+        width: calc(100vw - 113px);
 }
 
 @media (min-width: 1024px) {
     .color {
-        width: calc(100% / 3);
+        width: calc(100% / 2);
+    }
+    .color-wrapper {
+        width: calc(100% / 2);
+        min-height: calc(((((100vh - 56px) - 40px) / 10) * 5) + 40px)
     }
 }
 
@@ -166,4 +177,14 @@ nav {
     .color {
         width: calc(100% / 4);
     }
+    .color-wrapper {
+        min-height: calc((60px * 3) + 40px)
+    }
 }
+/* 
+@media (min-width: 2560px) {
+    .color {
+        width: calc(100% / 5);
+    }
+}
+ */
