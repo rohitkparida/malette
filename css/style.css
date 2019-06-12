@@ -169,7 +169,7 @@ nav {
     }
     .color-wrapper {
         width: calc(100% / 2);
-        min-height: calc(((((100vh - 56px) - 40px) / 10) * 5) + 40px)
+        min-height: calc((60px * 5) + 40px)
     }
 }
 
