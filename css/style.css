@@ -24,8 +24,13 @@
 }
 
 /*_________________________*/
+
+body {
+    overflow: hidden;
+}
+
 .content {
-    overflow: scroll;
+    overflow-y: scroll;
     opacity: 0;
     height: calc(100vh - 56px);
     width: calc(100vw - 56px);
@@ -41,7 +46,6 @@
     scroll-snap-align: start;
     width: 100%;
     height: unset;
-    float: left;
     user-select: none;
 }
 
@@ -89,7 +93,8 @@ nav {
     position: relative;
     width: 56px;
     background: #fafafa;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     float: left;
     z-index: 1;
     transform: translateX(-100vw);
@@ -157,10 +162,12 @@ nav {
         max-height: calc((60px * 5) + 40px);
     }
     nav {
+        overflow: hidden;
         width: 113px;
     }
     .content {
         width: calc(100vw - 113px);
+    }
 }
 
 @media (min-width: 1024px) {
@@ -181,10 +188,9 @@ nav {
         min-height: calc((60px * 3) + 40px)
     }
 }
-/* 
+
 @media (min-width: 2560px) {
     .color {
-        width: calc(100% / 5);
+        width: calc(100% / 5)
     }
 }
- */
